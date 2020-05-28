@@ -50,6 +50,7 @@
                 <td>{{$item["DepartureAirportName"]}}</td>
                 <td>{{$item["ArrivalAirportName"]}}</td>
                 <td>{{$item["FlightLayoverTime"]}}</td>
+                <td><hr></td>
               </tr>
               @endforeach
               @endforeach

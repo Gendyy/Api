@@ -68,7 +68,7 @@
                 <label for="name">{{ __('To') }}</label>
                     <input id="to" name="destination" type="text" class="form-control value="CAI" required autocomplete="name" placeholder="Country Or Airport" autofocus>
                 <label for="name">{{ __('Depart') }}</label>
-                    <input id="name" name="departure_date" type="text" class="form-control value="JFK" required autocomplete="name" placeholder="Depart">
+                    <input id="name" name="departure_date" type="date" class="form-control value="JFK" required autocomplete="name" placeholder="Depart">
                 <label for="name">{{ __('Travellers') }}</label>
                     <input id="name" type="number" min="1"  name="traveller" type="text" class="form-control value="Cai" required autocomplete="name">
                 <label for="name">{{ __('Class') }}</label>
