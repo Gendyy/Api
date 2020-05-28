@@ -72,7 +72,10 @@
                 <label for="name">{{ __('Travellers') }}</label>
                     <input id="name" type="number" min="1"  name="traveller" type="text" class="form-control value="Cai" required autocomplete="name">
                 <label for="name">{{ __('Class') }}</label>
-                    <input id="name" name="class" type="text" class="form-control value="Cai" required autocomplete="name">
+                    <label for="cars">Choose a Class:</label>
+                    <select id="cars" name="class">
+                    <option class="form-control required value="Economy">Economy</option>
+                    </select>
                 </div>
                 <input type="submit" value="Submit">
 
