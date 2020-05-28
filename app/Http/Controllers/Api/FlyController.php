@@ -20,7 +20,7 @@ class FlyController extends Controller
 
     public function showResults(Request $request) {
 
-        $data = HTTP::asForm()->post('https://api.flyallover.com/api/search', [
+        $avilableFlightsFlyAllOver = HTTP::asForm()->post('https://api.flyallover.com/api/search', [
 
                 'class' => $request['class'],
                 'trip_type' => $request['trip_type'],
@@ -31,8 +31,7 @@ class FlyController extends Controller
                 'seat' => $request['seat'],
 
 
-        ]);
-        $values = $data->json()["data"]["Itineraries"];
+        ])->json()["data"]["Itineraries"];
 
         // foreach ($results as $result)
         // {   
@@ -44,7 +43,7 @@ class FlyController extends Controller
         // }
 
 
-        return view('results', compact('values'));
+        return view('results', compact('avilableFlightsFlyAllOver'));
 
         // $values->toArray();
 

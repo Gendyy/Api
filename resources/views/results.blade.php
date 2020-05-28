@@ -34,10 +34,10 @@
                 <th>FlightLayoverTime</th>
               </tr>
 
-              @for($i = 0; $i < count($values); $i++){{-- Get the numbers of all the incoming arrays  --}}
+              @for($i = 0; $i < count($avilableFlightsFlyAllOver); $i++){{-- Get the numbers of all the incoming arrays  --}}
 
               {{-- Loop to Access the first array--}}
-              @foreach ($values[$i]['flights'] as $items) 
+              @foreach ($avilableFlightsFlyAllOver[$i]['flights'] as $items) 
               <td><br><br>
               {{--loop to get every invidual array   --}}
               @foreach ($items as $keys => $item)
