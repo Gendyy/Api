@@ -60,9 +60,9 @@
                 {{-- <td>{{$item["FlightLayoverTime"]}}</td> --}}
                 
                 @if($key == 0)
-                <td>{{floor($items[1]["FlightLayoverTime"]/60) . " Hours " . $items[1]['FlightLayoverTime']%60 . " Mins"}}</td>
-                @elseif($key == 0)
-                <td></td>
+                @for($x = 1; $x < count($items); $x++)
+                <td>{{floor($items[$x]["FlightLayoverTime"]/60) . " Hours " . $items[$x]['FlightLayoverTime']%60 . " Mins"}}</td>
+                @endfor
                 @endif
 
               </tr>
