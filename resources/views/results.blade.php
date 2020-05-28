@@ -24,6 +24,7 @@
           <div class="box-body table-responsive no-padding">
             <table class="table table-hover">
               <tr>
+                <th>Num</th>
                 <th>DepartureDateTime</th>
                 <th>ArrivalDateTime</th>
                 <th>FlightNumber</th>
@@ -38,10 +39,17 @@
 
               {{-- Loop to Access the first array--}}
               @foreach ($avilableFlightsFlyAllOver[$i]['flights'] as $items) 
-              <td><br><br>
+              <td><br>
               {{--loop to get every invidual array   --}}
-              @foreach ($items as $keys => $item)
+              @foreach ($items as $key => $item) 
+
               <tr>
+                {{-- Catcing the array's key --}}
+                @if($key == 0) 
+                <th>{{$i}}</th>
+                @elseif($key == 1)
+                <th></th>
+                @endif
                 <td>{{\Carbon\Carbon::parse($item["DepartureDateTime"])->isoFormat('MMMM Do YYYY, h:mm a')}}</>
                 <td>{{\Carbon\Carbon::parse($item["ArrivalDateTime"])->isoFormat('MMMM Do YYYY, h:mm a')}}</td>
                 <td>{{$item["FlightNumber"]}}</td>
@@ -50,11 +58,15 @@
                 <td>{{$item["DepartureAirportName"]}}</td>
                 <td>{{$item["ArrivalAirportName"]}}</td>
                 {{-- <td>{{$item["FlightLayoverTime"]}}</td> --}}
-                @if($item["FlightLayoverTime"] !== 0) 
-                  <td>{{floor($item["FlightLayoverTime"]/60) . " Hours " . $item['FlightLayoverTime']%60 . " Mins"}}</td>
+                
+                @if($key == 0)
+                <td>{{floor($items[1]["FlightLayoverTime"]/60) . " Hours " . $items[1]['FlightLayoverTime']%60 . " Mins"}}</td>
+                @elseif($key == 0)
+                <td></td>
                 @endif
-                <td><hr></td>
+
               </tr>
+              
               @endforeach
               @endforeach
               @endfor
