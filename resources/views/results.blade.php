@@ -38,11 +38,11 @@
 
               {{-- Loop to Access the first array--}}
               @foreach ($values[$i]['flights'] as $items) 
-              <td><br><br></td>
+              <td><br><br>
               {{--loop to get every invidual array   --}}
-              @foreach ($items as $item)
+              @foreach ($items as $keys => $item)
               <tr>
-                <td>{{\Carbon\Carbon::parse($item["DepartureDateTime"])->isoFormat('MMMM Do YYYY, h:mm a')}}</td>
+                <td>{{\Carbon\Carbon::parse($item["DepartureDateTime"])->isoFormat('MMMM Do YYYY, h:mm a')}}</>
                 <td>{{\Carbon\Carbon::parse($item["ArrivalDateTime"])->isoFormat('MMMM Do YYYY, h:mm a')}}</td>
                 <td>{{$item["FlightNumber"]}}</td>
                 <td>{{floor($item["ElapsedTime"]/60) . " Hours " . $item['ElapsedTime']%60 . " Mins"}}</td>
@@ -52,8 +52,6 @@
                 {{-- <td>{{$item["FlightLayoverTime"]}}</td> --}}
                 @if($item["FlightLayoverTime"] !== 0) 
                   <td>{{floor($item["FlightLayoverTime"]/60) . " Hours " . $item['FlightLayoverTime']%60 . " Mins"}}</td>
-
-          
                 @endif
                 <td><hr></td>
               </tr>

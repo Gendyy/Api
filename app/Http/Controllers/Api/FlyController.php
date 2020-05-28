@@ -22,8 +22,8 @@ class FlyController extends Controller
 
         $data = HTTP::asForm()->post('https://api.flyallover.com/api/search', [
 
-
-                'trip_type' => "OneWay",
+                'class' => $request['class'],
+                'trip_type' => $request['trip_type'],
                 'origin' => $request['from'],
                 'destination' => $request['destination'],
                 'departure_date' => $request['departure_date'],

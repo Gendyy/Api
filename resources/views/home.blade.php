@@ -62,7 +62,7 @@
     @csrf
             <div class="form-group row">
                 <label for="trip_type">One Way</label>
-                <input type="radio" name="trip_type">
+                <input type="radio" value="OneWay" name="trip_type">
                 <label for="name">{{ __('From') }}</label>
                     <input id="origin" name="from" type="text" class="form-control value="" required autocomplete="name" placeholder="Country Or Airport" autofocus>
                 <label for="name">{{ __('To') }}</label>
